@@ -38,6 +38,7 @@ contract PropertyNFT is ERC721, Ownable {
     error PropertyNFT__BuyPriceMustBeGreaterThanOrEqualToSellPrice();
     error PropertyNFT__PropertyDoesNotExist();
     error PropertyNFT__WithdrawFailed();
+    error PropertyNFT__PayoutFailed();
 
     /*//////////////////////////////////////////////////////////////
                             STATE VARIABLES
@@ -133,7 +134,8 @@ contract PropertyNFT is ERC721, Ownable {
         s_fractionalBalance[tokenId][address(this)] += amount;
 
         // Send ETH to the seller
-        payable(msg.sender).transfer(payout);
+        (bool success, ) = payable(msg.sender).call{value: payout}("");
+        if (!success) revert PropertyNFT__PayoutFailed();
 
         emit FractionsSold(tokenId, msg.sender, amount, payout);
     }
