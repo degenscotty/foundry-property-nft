@@ -1,4 +1,4 @@
-![Alt text]("./img/Popskully_Tag.jpg")
+![Alt text]("./img/PopSkully_Tag.jpg")
 
 ## Foundry
 
