@@ -1,8 +1,4 @@
-<p align="center">
-  <img alt="Light" src="./img/PopSkully_Tag.jpg" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="./img/pug.png" width="45%">
-</p>
+![Alt text]("./img/Popskully_Tag.jpg")
 
 ## Foundry
 
